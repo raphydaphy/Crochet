@@ -5,12 +5,12 @@ import net.minecraft.nbt.CompoundTag;
 
 public class PlayerData
 {
-	public CompoundTag get(PlayerEntity player)
+	public static CompoundTag get(PlayerEntity player)
 	{
 		return ((DataHolder)player).getAdditionalData();
 	}
 
-	public void markDirty(PlayerEntity player)
+	public static void markDirty(PlayerEntity player)
 	{
 		 ((DataHolder)player).markAdditionalDataDirty();
 	}
