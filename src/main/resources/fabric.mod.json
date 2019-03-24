@@ -1,0 +1,17 @@
+{
+  "id": "crochet",
+  "name": "Crochet",
+  "description": "Entity Data & Networking tools for Fabric mods",
+  "version": "${version}",
+  "side": "universal",
+  "initializers": [
+    "com.raphydaphy.crochet.Crochet",
+    "com.raphydaphy.crochet.CrochetClient"
+  ],
+  "requires": {
+    "fabric": "*"
+  },
+  "mixins": {
+    "common": "crochet.common.json"
+  }
+}
