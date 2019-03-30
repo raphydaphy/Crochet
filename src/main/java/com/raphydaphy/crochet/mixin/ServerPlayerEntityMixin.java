@@ -17,7 +17,7 @@ public abstract class ServerPlayerEntityMixin implements DataHolder
 	@Inject(at = @At("HEAD"), method = "method_14203")
 	private void onPlayerClone(ServerPlayerEntity playerEntity, boolean keepEverything, CallbackInfo info) // copyFrom
 	{
-		this.setAdditionalData(((DataHolder) playerEntity).getAdditionalData());
+		this.setAllAdditionalData(((DataHolder) playerEntity).getAllAdditionalData());
 		markAdditionalDataDirty();
 	}
 
@@ -27,7 +27,7 @@ public abstract class ServerPlayerEntityMixin implements DataHolder
 		if (additionalDataNeedsSync)
 		{
 			additionalDataNeedsSync = false;
-			PacketHandler.sendToClient(new PlayerDataUpdatePacket(this.getAdditionalData()), (ServerPlayerEntity) (Object) this);
+			PacketHandler.sendToClient(new PlayerDataUpdatePacket(this.getAllAdditionalData()), (ServerPlayerEntity) (Object) this);
 		}
 	}
 

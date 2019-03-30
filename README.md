@@ -67,12 +67,12 @@ ServerSidePacketRegistry.INSTANCE.register(DemoPacket.ID, new DemoPacket.Handler
 `````
 
 ## Crochet Entity-Data
-Crochet also provides tools that allow mod developers to store persistent data on players. Data is stored in `CompoundTag` and sent to the client whenever it is marked as dirty. Therefore, data should be added on the server-side, although adding it on both sides will also work. Below is a simple example of the Crochet PlayerData system being used to store a boolean.
+Crochet also provides tools that allow mod developers to store persistent data on players. Data is stored in `CompoundTag` and sent to the client whenever it is marked as dirty. Therefore, data should be added on the server-side, although adding it on both sides will also work. Below is a simple example of the Crochet PlayerData system being used to store a boolean. Not that `"example_mod"` should be replaced by your mod ID in order to prevent data conflicts between mods.
 
 ``````
 public boolean onActivated(PlayerEntity player)
 {
-    PlayerData.get(player).putBoolean("UsingItem", true);
+    PlayerData.get(player, "example_mod").putBoolean("UsingItem", true);
     PlayerData.markDirty(player);
 }
 ``````

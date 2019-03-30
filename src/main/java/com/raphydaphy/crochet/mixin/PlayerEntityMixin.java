@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(PlayerEntity.class)
 public abstract class PlayerEntityMixin implements DataHolder
 {
-	private static final String ADDITIONAL_DATA_TAG = "ArcaneMagicData";
+	private static final String ADDITIONAL_DATA_TAG = "PlayerData";
 	private CompoundTag additionalData = new CompoundTag();
 
 	@Inject(at = @At("TAIL"), method = "readCustomDataFromTag")
@@ -28,13 +28,18 @@ public abstract class PlayerEntityMixin implements DataHolder
 	}
 
 	@Override
-	public CompoundTag getAdditionalData()
+	public CompoundTag getAdditionalData(String mod)
 	{
-		return additionalData;
+		if (!additionalData.containsKey(mod))
+		{
+			additionalData.put(mod, new CompoundTag());
+			markAdditionalDataDirty();
+		}
+		return (CompoundTag)additionalData.getTag(mod);
 	}
 
 	@Override
-	public void setAdditionalData(CompoundTag tag)
+	public void setAllAdditionalData(CompoundTag tag)
 	{
 		this.additionalData = tag;
 	}
