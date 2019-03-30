@@ -35,7 +35,13 @@ public abstract class PlayerEntityMixin implements DataHolder
 			additionalData.put(mod, new CompoundTag());
 			markAdditionalDataDirty();
 		}
-		return (CompoundTag)additionalData.getTag(mod);
+		return (CompoundTag) additionalData.getTag(mod);
+	}
+
+	@Override
+	public CompoundTag getAllAdditionalData()
+	{
+		return additionalData;
 	}
 
 	@Override
