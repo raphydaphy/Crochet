@@ -14,7 +14,7 @@ public abstract class ServerPlayerEntityMixin implements DataHolder
 {
 	private boolean additionalDataNeedsSync = true;
 
-	@Inject(at = @At("HEAD"), method = "method_14203")
+	@Inject(at = @At("HEAD"), method = "copyFrom")
 	private void onPlayerClone(ServerPlayerEntity playerEntity, boolean keepEverything, CallbackInfo info) // copyFrom
 	{
 		this.setAllAdditionalData(((DataHolder) playerEntity).getAllAdditionalData());
