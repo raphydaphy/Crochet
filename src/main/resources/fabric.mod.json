@@ -1,17 +1,33 @@
 {
+  "schemaVersion": 1,
   "id": "crochet",
   "name": "Crochet",
-  "description": "Entity Data & Networking tools for Fabric mods",
   "version": "${version}",
+
   "side": "universal",
-  "initializers": [
-    "com.raphydaphy.crochet.Crochet",
-    "com.raphydaphy.crochet.CrochetClient"
-  ],
+  "entrypoints": {
+    "main": [
+      "com.raphydaphy.crochet.Crochet"
+    ],
+    "client": [
+      "com.raphydaphy.crochet.CrochetClient"
+    ]
+  },
   "requires": {
+    "fabricloader": ">=0.4.0",
     "fabric": "*"
   },
-  "mixins": {
-    "common": "crochet.common.json"
+  "mixins": [
+    "crochet.common.json"
+  ],
+
+  "authors": [
+    "raphydaphy"
+  ],
+  "licence": "MIT",
+  "description": "Persistent Player Data & Networking tools for Fabric mods",
+  "icon": "icon.png",
+  "custom": {
+    "modmenu:api": true
   }
 }
