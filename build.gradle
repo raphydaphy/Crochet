@@ -5,7 +5,7 @@ buildscript {
 		gradlePluginPortal()
 	}
 	dependencies {
-		classpath 'net.fabricmc:fabric-loom:0.2.0-SNAPSHOT'
+		classpath 'net.fabricmc:fabric-loom:0.2.1-SNAPSHOT'
 	}
 }
 
@@ -34,6 +34,8 @@ dependencies {
 	// Dependencies
 	modCompile "net.fabricmc:fabric:${project.fabric_version}"
 	modCompile "io.github.prospector.modmenu:ModMenu:${project.modmenu_version}"
+
+	include "net.fabricmc:fabric:${project.fabric_version}"
 }
 
 processResources {
