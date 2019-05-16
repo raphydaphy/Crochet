@@ -5,7 +5,7 @@ buildscript {
 		gradlePluginPortal()
 	}
 	dependencies {
-		classpath 'net.fabricmc:fabric-loom:0.2.1-SNAPSHOT'
+		classpath 'net.fabricmc:fabric-loom:0.2.3-SNAPSHOT'
 		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.+'
 	}
 }
@@ -36,10 +36,10 @@ dependencies {
 	modCompile "net.fabricmc:fabric-loader:${project.loader_version}"
 
 	// Dependencies
-	modCompile "net.fabricmc:fabric:${project.fabric_version}"
+	modCompile "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 	modCompile "io.github.prospector.modmenu:ModMenu:${project.modmenu_version}"
 
-	include "net.fabricmc:fabric:${project.fabric_version}"
+	include "net.fabricmc.fabric-api:fabric-networking:${project.fabric_networking_version}"
 }
 
 processResources {
