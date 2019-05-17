@@ -1,7 +1,6 @@
 package com.raphydaphy.crochet.data;
 
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.util.Identifier;
 
 public interface DataHolder
 {
