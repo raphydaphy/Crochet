@@ -22,7 +22,6 @@ public abstract class ServerPlayerEntityMixin implements DataHolder
 	@Inject(at = @At("HEAD"), method = "copyFrom")
 	private void onPlayerClone(ServerPlayerEntity playerEntity, boolean keepEverything, CallbackInfo info) // copyFrom
 	{
-		System.out.println("ok dam they cloned");
 		this.setAllAdditionalData(((DataHolder) playerEntity).getAllAdditionalData());
 		markAdditionalDataDirty();
 	}
