@@ -39,7 +39,7 @@ dependencies {
 	modCompile "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 	modCompile "io.github.prospector.modmenu:ModMenu:${project.modmenu_version}"
 
-	include "net.fabricmc.fabric-api:fabric-networking:${project.fabric_networking_version}"
+	include "net.fabricmc.fabric-api:fabric-networking-v0:${project.fabric_networking_version}"
 }
 
 processResources {
