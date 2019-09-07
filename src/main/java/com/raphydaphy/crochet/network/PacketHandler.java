@@ -29,7 +29,7 @@ public class PacketHandler
 
 		if (netHandler != null)
 		{
-			netHandler.getClientConnection().send(new CustomPayloadC2SPacket(packet.getID(), buf));
+			netHandler.getConnection().send(new CustomPayloadC2SPacket(packet.getID(), buf));
 		}
 	}
 
